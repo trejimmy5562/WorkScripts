@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+PID=$(pgrep -f <NAME-OF-PROCESS>)
+if ps -p $PID > /dev/null; then
+	echo "Process is running!"
+	echo $PID
+else
+	echo "Does not exist"
+fi
+
+# this will go through the running processes to check for an app of your choice
+# checks by PID

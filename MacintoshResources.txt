@@ -1,0 +1,9 @@
+#!/usr/bin/env osascript
+
+
+set volume output volume 70 
+say "I'm watching you" using "whisper"
+say "you also suck, like big time"
+
+# this script just sets the volume on someone's Mac to high and attempts to use the voice
+# narration to speak out loud
