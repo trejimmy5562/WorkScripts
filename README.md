@@ -1,6 +1,5 @@
 # WorkScripts
 Collection of random scripts from work
-# R_Scripts
 | Work Scripts |
 |:---------:|
 |[Check for app by PID](edpacheck.txt)|
