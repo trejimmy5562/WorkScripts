@@ -1,7 +1,7 @@
 # WorkScripts
 Collection of random scripts from work
 # R_Scripts
-| Homeworks |
+| Work Scripts |
 |:---------:|
 |[Assignment 1](Assn1)|
 |[Assignment 2](Assn2)|
