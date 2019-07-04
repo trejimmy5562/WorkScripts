@@ -1,0 +1,37 @@
+#!/bin/bash
+
+
+path1='/PassportHD/Path/to/csv/folder'
+IP=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1')
+#MAC=$(ip link show wlan0 | awk '/ether/ {print $2}')
+HOSTNAME=$(hostname)
+
+
+EDPARunning=false
+
+
+PID=$(pgrep -f <process>)
+if ps -p $PID > /dev/null; then
+	echo "Process is running!"
+	echo $PID
+	EDPARunning=true
+else
+	echo "Does not exist"
+	EDPARunning=false
+fi
+
+
+#test for the above
+if [ "$EDPARunning" = true ] ; then
+    echo 'oof'
+fi
+
+if [ ! -f $path1/$HOSTNAME.csv ]; then 
+	printf 'hostname','ip','EDPA','PID\n' >> $path1/ComputerInfo.csv
+	printf $HOSTNAME,$IP,$EDPARunning,$PID'\n' >> $path1/ComputerInfo.csv
+
+else
+	printf $HOSTNAME,$IP,$EDPARunning,$PID'\n' >> $path1/ComputerInfo.csv
+fi
+
+
